@@ -1,21 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React , {Component} from 'react';
+import { render } from 'react-dom';
+import { StyleSheet, Text, View , TouchableOpacity , FlatList} from 'react-native';
+import ExpenseList from './component/MiddleExpenseList';
+import Heading from "./component/Heading"
+import MiddleExpenseList from './component/MiddleExpenseList';
+import TotalExpense from './component/TotalExpense';
 
-export default function App() {
+
+
+export default class App extends React.Component{
+
+  constructor(props){
+    super(props);
+  }
+
+
+  render(){
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Heading/>
+      <MiddleExpenseList/>
+      <TotalExpense/>
     </View>
   );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
 });

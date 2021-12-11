@@ -22,15 +22,15 @@ export default class Heading extends React.Component{
       flexDirection : "row",
       justifyContent: 'center',
       alignItems : "center",
-      borderWidth : 1,
-      borderColor : "#F2F2F2",
+      // borderWidth : 1,
+      // borderColor : "#F2F2F2",
       height : 50,
       marginTop : 60
     },
     mainHeading : {
         fontWeight : "700",
         fontSize : 18,
-        color : "#2095F2",
+        color : "#26324C",
         marginLeft : 80
     },
     deleteIcon : {

@@ -8,24 +8,32 @@ import {
   TouchableNativeFeedbackBase,
 } from "react-native";
 
-export default class TotalExpense extends React.Component{
-
+export default class TotalExpense extends React.Component {
 
   render() {
+
     return (
       <>
         <View style={styles.totalExpenseView}>
-          <View style={{marginTop : 10 , marginBottom : 6}}>
-            <Text style={styles.totalData}>Expense Sheet Total (In USD) :</Text>
+          <View style={{ marginTop: 10, marginBottom: 6 }}>
+            <Text style={styles.totalData}>
+              Expense Sheet Total (In USD) :{" "}
+              <Text style={styles.expenseFont}>${this.props.finalExpense}</Text>
+            </Text>
           </View>
           <View>
             <Text style={styles.totalData}>
               Expense Sheet Total (In INR) :
+              <Text style={styles.expenseFont}>
+                ₹{parseInt(this.props.finalExpense * 75.79)}
+              </Text>
             </Text>
           </View>
-          <TouchableOpacity onPress={()=>{
-            this.props.addExpense();
-          }}>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.addExpense();
+            }}
+          >
             <Text style={styles.addButton}>ADD NEW EXPENSE</Text>
           </TouchableOpacity>
         </View>
@@ -54,7 +62,11 @@ const styles = StyleSheet.create({
   totalData: {
     color: "#C0C6CF",
     fontWeight: "bold",
-    fontSize : 16,
+    fontSize: 16,
+  },
+  expenseFont: {
+    color: "#26324C",
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });
-

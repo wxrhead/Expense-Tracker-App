@@ -15,7 +15,8 @@ export default class MiddleExpenseList extends React.Component {
       <View style={styles.listView}>
         <FlatList
           data={this.props.billingList}
-          renderItem={({ item }) => (
+          keyExtractor={(_, index) => index.toString()}
+          renderItem={({ item, index }) => (
             <View style={styles.individualBillView}>
               <View style={styles.upperBillView}>
                 <Text style={styles.billTitle}>{item.Title}</Text>
@@ -23,7 +24,13 @@ export default class MiddleExpenseList extends React.Component {
               </View>
               <View style={styles.lowerBillView}>
                 <Text style={styles.billDate}>June , 1984</Text>
-                <TouchableOpacity><Image source={require("../images/edit.png")} style={styles.editIcon} resizeMode="cover"/></TouchableOpacity>
+                <TouchableOpacity>
+                  <Image
+                    source={require("../images/edit.png")}
+                    style={styles.editIcon}
+                    resizeMode="cover"
+                  />
+                </TouchableOpacity>
               </View>
             </View>
           )}
@@ -36,43 +43,43 @@ export default class MiddleExpenseList extends React.Component {
 const styles = StyleSheet.create({
   listView: {
     height: 500,
-    paddingLeft : 20
+    paddingLeft: 20,
   },
-  individualBillView : {
-    height : 90,
-    borderWidth : 1,
-    borderColor : "#F2F2F2",
-    marginTop : 5,
-    marginBottom : 5,
-    padding : 14,
-    borderRadius : 5
+  individualBillView: {
+    height: 90,
+    borderWidth: 1,
+    borderColor: "#F2F2F2",
+    marginTop: 5,
+    marginBottom: 5,
+    padding: 14,
+    borderRadius: 5,
   },
-  upperBillView : {
-      flexDirection : "row",
+  upperBillView: {
+    flexDirection: "row",
   },
-  lowerBillView : {
-    flexDirection : "row",
-    marginTop : 10
+  lowerBillView: {
+    flexDirection: "row",
+    marginTop: 10,
   },
-  billTitle : {
-    color : "#26324C",
-    fontSize : 20,
-    marginRight : 185,
-    marginLeft : 15,
+  billTitle: {
+    color: "#26324C",
+    fontSize: 20,
+    marginRight: 185,
+    marginLeft: 15,
   },
-  bill : {
-      color : "#2095F2",
-      fontSize : 20,
-      fontWeight : "bold",
+  bill: {
+    color: "#2095F2",
+    fontSize: 20,
+    fontWeight: "bold",
   },
-  billDate : {
-    color : "#C3C9CF",
-    fontWeight : "bold",
-    marginRight : 195,
-    fontSize : 16
+  billDate: {
+    color: "#C3C9CF",
+    fontWeight: "bold",
+    marginRight: 195,
+    fontSize: 16,
   },
-  editIcon : {
-      height : 27,
-      width : 27,
-  }
+  editIcon: {
+    height: 27,
+    width: 27,
+  },
 });

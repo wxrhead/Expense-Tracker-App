@@ -10,7 +10,6 @@ export default class Heading extends React.Component {
         <TouchableOpacity
           onPress={() => {
             this.props.clearList();
-            
           }}
         >
           <Image
@@ -33,6 +32,7 @@ const styles = StyleSheet.create({
     // borderColor : "#F2F2F2",
     height: 50,
     marginTop: 60,
+    backgroundColor : "#2095F2"
   },
   mainHeading: {
     fontWeight: "700",

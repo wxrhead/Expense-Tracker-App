@@ -21,7 +21,7 @@ export default class App extends React.Component {
   // Heading Functions
 
   clearList = () => {
-    this.setState({ billingList: null , finalExpense : 0 });
+    this.setState({ billingList: [] , finalExpense : 0 });
   };
 
   // Modal functions
